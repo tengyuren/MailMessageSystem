@@ -8,11 +8,12 @@ app=Flask(__name__)
 app.secret_key="ren"
 
 # 配置信息
-app.config['MAIL_SERVER'] = 'smtp.qq.com'
-app.config['MAIL_PORT'] = 587
+app.config['MAIL_SERVER'] = 'smtp.163.com'
+app.config['MAIL_PORT'] = 25
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = '877494093@qq.com'   #官方账号
-app.config['MAIL_PASSWORD'] = 'onyruclmralnbbgb'   # ujeustlpkjtobfia ，密钥
+app.config['MAIL_USERNAME'] = 'melon_garden@163.com'   #官方账号
+app.config['MAIL_PASSWORD'] = 'ONJDDBYVQQWOPCPC'   # ujeustlpkjtobfia  onyruclmralnbbgb ，密钥  UFQNCRHIOBGLZVNH ONJDDBYVQQWOPCPC mg123465
+# app.config['FLASKY_MAIL_SUBJECT_PREFIX'] = '163.com'
 mail = Mail(app)
 
 TEMPLATES_AUTO_RELOAD = True
@@ -47,7 +48,7 @@ def post_mail(from_user,to_user,post_id,id):
         content='<h3>快来查看评论吧</h3>'
     
     # 返回值
-    msg = Message('MelonGarden官方提醒邮件', sender='877494093@qq.com', recipients=['877494093@qq.com'])
+    msg = Message('MelonGarden Official', sender='melon_garden@163.com', recipients=[to_user,'melon_garden@163.com'])
     msg.html= '''<!DOCTYPE html>
                     <html lang="en">
                     <head>
@@ -131,9 +132,9 @@ def post_mail(from_user,to_user,post_id,id):
                         <div class="header-wrapper">
                             <div class="headerclearfix">
                                 <!-- 创建logo -->
-                                <h1 class="logo" title="来自MelonGarden的邮件">
+                                <h1 class="logo" title="Mail From MelonGarden">
                                     <img class="im" src="https://6370-cpcloud-4goick7vdf024294-1305462307.tcb.qcloud.la/logo.png?sign=275b2da1dbb167e7652d5b9ff63a38ed&t=1622203471">
-                                    来自MelonGarden的邮件
+                                    Mail From MelonGarden
                                 </h1>
                             </div>
                             <!-- 开始 -->
@@ -141,9 +142,9 @@ def post_mail(from_user,to_user,post_id,id):
                                 <!-- 固定 -->
                                 <div class="clearfix">
                                     <div class="all-goods-wrapper">
-                                        <div class="all-goods" >亲爱的%s，您好：</div>
+                                        <div class="all-goods" >Dear %s ：</div>
                                         <div class="left-menu">
-                                            %s用户在MelonGarden博客中找到了有趣的帖子并且@了您，希望您及时查看。  
+                                            %s users found interesting posts on the MelonGarden blog and @you, you can check it at your convenience.  
                                         </div>
                                     </div> 
                                 </div>
@@ -154,7 +155,7 @@ def post_mail(from_user,to_user,post_id,id):
                                 </div>
                             </div>
                             <div class="btn_wrapper">
-                                <a href="http://github.raiix.com/melongarden/" class="a_to">前往查看</a>
+                                <a href="http://github.raiix.com/melongarden/" class="a_to">Go to view</a>
                             </div>
                         </div>
                     </body>
