@@ -10,7 +10,7 @@
 
  `pip install requests`
 
-### 运行main.py文件
+### 运行mail.py文件
 
- `python main.py &`
+ `python mail.py &`
 
