@@ -1,10 +1,16 @@
 # MailMessageSystem
 
-部署环境安装
-依次运行
-`pip install flask`
-`pip install flask_mail`
-`pip install requests`
+## 部署环境安装 
 
-运行main.py
-`python main.py &`
+### 依次运行 
+
+`pip install flask` 
+
+`pip install flask_mail`
+
+ `pip install requests`
+
+### 运行main.py文件
+
+ `python main.py &`
+
